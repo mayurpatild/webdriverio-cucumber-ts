@@ -89,6 +89,7 @@ npm run report
 
 #### Screenshots:
 
-- [Execution of UI test case results](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report.png)
-- [Selenium Grid Dashboard](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub-sessions.png)
-- [Simultaneous nodes of chrome and firefox running parallelly]
+- [Execution of UI test case results]
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report.png?raw=true)
+- [Selenium Grid Dashboard -> Simultaneous nodes of chrome and firefox running parallelly]
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub-sessions.png?raw=true)
