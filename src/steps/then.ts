@@ -5,6 +5,8 @@ import { millionMorePage } from "../pages/millionMorePage";
 import { TIMEOUT_MS } from "../constants/globalConstants";
 import { imageService } from "../support/imageService";
 import { logger } from "../support/logger";
+import { videoPage } from "../pages/videoPage";
+import { addScreenshot } from "../support/reporter";
 
 Then(
   /^I expect "([^"]*)?" model items is displayed$/,
@@ -89,5 +91,14 @@ Then(
   /^I expect that element "([^"]*)?" becomes( not)* displayed$/,
   function (selector: string, falseCase: string): void {
     $(selector).waitForDisplayed(TIMEOUT_MS, !!falseCase);
+  }
+);
+
+Then(
+  /^I play video and validate pause and play$/,
+  function (): void {
+    videoPage.clickIntroVideoToBePlayed();
+    videoPage.verifyVideoPlayPauseAndTimeFrame();
+    addScreenshot();
   }
 );

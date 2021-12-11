@@ -39,6 +39,5 @@ After((scenario: HookScenarioResult) => {
     status: scenario.result.status,
     error: scenario.result.exception,
   });
-
   addScreenshot();
 });

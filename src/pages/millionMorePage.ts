@@ -8,18 +8,6 @@ class MillionMorePages extends BasePage {
     logger.info("MillionMore selector constructor, page object model setup");
   }
 
-  getElementByPartialText(tagName, text): WebdriverIO.Element {
-    // tagName=em, text=Buy
-    // $("em*=Buy")
-    return $(`${tagName}*=${text}`);
-  }
-
-  getElementByText(tagName, text): WebdriverIO.Element {
-    // tagName=em, text=Buy
-    // $("em*=Buy")
-    return $(`${tagName}=${text}`);
-  }
-
   get purchaseNav(): WebdriverIO.Element {
     return this.getElementByPartialText("h3", "Purchase");
   }

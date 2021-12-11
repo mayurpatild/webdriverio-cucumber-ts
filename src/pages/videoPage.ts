@@ -1,49 +1,43 @@
-// import { expect } from "chai"
-// import BasePage from "./basePage"
+import { TIMEOUT_MS } from "../constants/globalConstants"
+import { addText } from "../support/reporter"
+import BasePage from "./basePage"
+require('expect-webdriverio')
+class VideoPage extends BasePage {
 
-// class VideoPage extends BasePage {
+    get acceptBtn() { return $('button.accept-cookies-button') }
+    get introVid() { return $('#Video-1 button') } //Before Playing Video
+    get videoIframe() { return $('#Video-1 iframe') } //While video is playing
+    get player() { return $('#movie_player') } //After Video is over
+    get playPauseButton() { return $("button.ytp-play-button") }
+    get videoTime() { return $('.ytp-time-current') }
 
-//     get promortionImage() { return $('img[data-autoid="promotionBackgroundImage:image"]') }
-//     get safetyLearnMoreLink() { return $('#PromotionBackgroundImage-1  a[data-autoid="promotionBackgroundImage:learnMore"]') }
-//     get acceptBtn() { return $('button.accept-cookies-button') }
-//     get introVid() { return $('#Video-1 button') }
-//     get videoIframe() { return $('#Video-1 iframe') }
-//     get player() { return $('#movie_player') }
-//     get playPauseButton() { return $('.ytp-play-button') }
-//     get videoTime() { return $('.ytp-time-current') }
+    clickIntroVideoToBePlayed() {
+        (this.introVid).click();
+    }
 
-//     redirectToDetails() {
-//         this.promortionImage.scrollIntoView();
-//         this.safetyLearnMoreLink.click();
-//     }
+    /*************
+     * Method: 
+     * Verify Video is auto played and verify is played status
+     * Then pause video and verify video is paused
+     */
+    async verifyVideoPlayPauseAndTimeFrame() {
+        await browser.switchToFrame(await this.videoIframe)
+        await browser.pause(2000)
+        await expect(await this.player).toHaveElementClass('playing-mode')
+        await addText("Video is playing")
+        await expect(await this.playPauseButton).toBeClickable();
+        await (await this.playPauseButton)
+            .waitForDisplayed(TIMEOUT_MS);
+        await this.playPauseButton.scrollIntoView()
+        await this.playPauseButton.click()
+        await browser.pause(2000)
+        await addText("Clicked on Pause Button")
+        await expect(await this.player).toHaveElementClass('paused-mode')
+        await expect(await this.videoTime).toHaveTextContaining('0:0')
+        await addText("Verified Video Paused")
+        await browser.switchToParentFrame();
+    }
+}
 
-//     clickSafetyVideoToBeplay() {
-//         this.introVid.click();
-//     }
-
-//     verifyVideoPlayPauseAndTimeFrame() {
-//         browser.switchToFrame(this.videoIframe)
-//         expect(this.player).toHaveElementClass('playing-mode')
-//         expect(this.playPauseButton).toBeClickable()
-//         this.playPauseButton.click()
-//         expect(this.player).toHaveElementClass('paused-mode')
-//         expect(this.verifyVideoTimeframe).toHaveTextContaining('0:0')
-//         browser.switchToParentFrame();
-//     }
-
-//     verifyVideoPausing() {
-//         browser.switchToFrame(this.videoIframe)
-//         expect(this.playPauseButton).toBeClickable()
-//         this.playPauseButton.click()
-//         expect(this.player).toHaveElementClass('paused-mode')
-//         browser.switchToParentFrame();
-//     }
-
-//     verifyVideoTimeframe() {
-//         browser.switchToFrame(this.videoIframe);
-//         expect(this.verifyVideoTimeframe).toHaveTextContaining('0:0')
-//         browser.switchToParentFrame();
-//     }
-// }
-
-// module.exports = new VideoPage();
+const videoPage = new VideoPage();
+export { videoPage };

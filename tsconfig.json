@@ -11,7 +11,7 @@
         "paths": {
             "*": [ "./*" ],
         },
-        "types": ["node", "chai", "@wdio/sync", "wdio-image-comparison-service"]
+        "types": ["node", "chai", "@wdio/sync", "wdio-image-comparison-service","expect-webdriverio"]
     },    
     "include": [
         "./src/**/*.ts",

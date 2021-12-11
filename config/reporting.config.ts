@@ -11,8 +11,8 @@ export const reportingConfig = {
       "allure",
       {
         outputDir: "./report/allure/",
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
       },
     ],
   ],
@@ -30,7 +30,7 @@ export const reportingConfig = {
     snippetSyntax: undefined,
     strict: true,
     tagsInTitle: false,
-    tagExpression: "",
+    tagExpression: "@Video", // tagExpression: "@Image"
     timeout: 60000,
   },
 };
