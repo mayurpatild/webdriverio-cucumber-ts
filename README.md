@@ -85,10 +85,11 @@ npm run report
 
 #### Local dashboard urls
 
-- [selenium-hub]() : `http://localhost:4444`
+- [selenium-hub](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub.png) : `http://localhost:4444`
 
 #### Screenshots:
 
-- [Execution of UI test case results]()
-- [Selenium Grid Dashboard]()
-- [Simultaneous nodes of chrome and firefox running parallelly]()
+- [Execution of UI test case results]
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report.png?raw=true)
+- [Selenium Grid Dashboard -> Simultaneous nodes of chrome and firefox running parallelly]
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub-sessions.png?raw=true)
