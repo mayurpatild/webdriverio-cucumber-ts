@@ -1,5 +1,5 @@
 @Modal
-Feature: Validate Modal/dialogs operation - Cookies | Cars Menu
+Feature: Modal/dialogs - Cookies | Menu
 
     As users, we are going to load the campaign url, 
     Modal dialogs should be displayed

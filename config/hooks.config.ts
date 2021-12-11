@@ -9,6 +9,8 @@ const logger = log("@automation");
 logger.info("Automation tests begins...");
 
 export const hooksConfig = {
+
+
   // Adding screen shot in case of failed steps.
   afterStep(
     uri,

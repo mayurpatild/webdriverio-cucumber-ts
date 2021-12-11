@@ -5,7 +5,7 @@
 version: "3"
 services:
   chrome:
-    image: selenium/node-chrome:4.0.0-20211013
+    image: selenium/node-chrome:${SELENIUM_VERSION}
     shm_size: 2gb
     depends_on:
       - selenium-hub-master
@@ -19,7 +19,7 @@ services:
       - "5900"
 
   firefox:
-    image: selenium/node-firefox:4.0.0-20211013
+    image: selenium/node-firefox:${SELENIUM_VERSION}
     shm_size: 2gb
     depends_on:
       - selenium-hub-master
@@ -33,7 +33,7 @@ services:
       - "5900"
 
   selenium-hub-master:
-    image: selenium/hub:4.0.0-20211013
+    image: selenium/hub:${SELENIUM_VERSION}
     container_name: selenium-hub-master
     ports:
       - "4442:4442"

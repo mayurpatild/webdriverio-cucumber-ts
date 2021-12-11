@@ -22,16 +22,16 @@ class VideoPage extends BasePage {
      */
     async verifyVideoPlayPauseAndTimeFrame() {
         await browser.switchToFrame(await this.videoIframe)
-        await browser.pause(2000)
+        await browser.pause(3000)
         await expect(await this.player).toHaveElementClass('playing-mode')
         await addText("Video is playing")
         await expect(await this.playPauseButton).toBeClickable();
         await (await this.playPauseButton)
             .waitForDisplayed(TIMEOUT_MS);
-        await this.playPauseButton.scrollIntoView()
         await this.playPauseButton.click()
         await browser.pause(2000)
         await addText("Clicked on Pause Button")
+        await (await this.player).scrollIntoView()
         await expect(await this.player).toHaveElementClass('paused-mode')
         await expect(await this.videoTime).toHaveTextContaining('0:0')
         await addText("Verified Video Paused")

@@ -1,4 +1,4 @@
-const report = require('multiple-cucumber-html-reporter'); // eslint-disable-line
+const report = require('multiple-cucumber-html-reporter');
 
 function addCIMetadata(customData) {
   return customData;
@@ -9,10 +9,10 @@ const customData = {
   data: [
     {
       label: 'Project',
-      value: 'Volvo - Campaign (A Million more)'
+      value: 'Volvo - Campaign ( A Million more )'
     },
     {
-      label: 'Generated on:',
+      label: 'Generated at: ',
       value: new Date()
     }
   ]

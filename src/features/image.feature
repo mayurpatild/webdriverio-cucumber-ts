@@ -1,5 +1,5 @@
 @Image
-Feature: Visual Image regression
+Feature: Visual Regression
 
     As users, we are going to load the campaign url, 
     We need to ensure our images are intact

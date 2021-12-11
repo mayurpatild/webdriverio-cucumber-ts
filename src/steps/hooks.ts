@@ -6,7 +6,6 @@ Before({ tags: "@OnlyChrome" }, () => {
   if (browser.capabilities.browserName !== "chrome") {
     return "skipped";
   }
-
   return undefined;
 });
 
@@ -14,7 +13,6 @@ Before({ tags: "@OnlyFirefox" }, () => {
   if (browser.capabilities.browserName !== "firefox") {
     return "skipped";
   }
-
   return undefined;
 });
 

@@ -1,5 +1,5 @@
 @Navigation
-Feature: Validate Navigations on volvo campaign
+Feature: Navigations
 
     As users, we are going to load the campaign url, 
     Navigations and Backlinks should be intact

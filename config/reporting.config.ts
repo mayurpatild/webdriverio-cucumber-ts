@@ -1,4 +1,8 @@
 export const reportingConfig = {
+
+  // Test reporter for stdout.
+  // The only one supported by default is 'dot'
+  // see also: https://webdriver.io/docs/dot-reporter.html
   reporters: [
     "spec",
     [
@@ -30,7 +34,7 @@ export const reportingConfig = {
     snippetSyntax: undefined,
     strict: true,
     tagsInTitle: false,
-    tagExpression: "@Video", // tagExpression: "@Image"
-    timeout: 60000,
+    tagExpression: "", // tagExpression: "@Image" , Keep Empty for running all scenarios
+    timeout: 120000,
   },
 };
