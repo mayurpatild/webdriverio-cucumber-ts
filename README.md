@@ -1,23 +1,25 @@
-# Volvo assignment ( Docker + Selenium Grid + Cucumber + Javascript + WebdriverIO )
+# Volvo Test assignment ( Docker + Selenium Grid + Cucumber + Typescript + WebdriverIO )
 
 #### Requirements
 
 - [x] Setup the solution with its Dockerized image - `Docker compose with selenium-hub, selenium-node/chrome, selenium-node/firefox`
-- [x] Parallel execution of tests - `Chrome:2 instances, Firefox:2 instances`
+- [x] Parallel execution of tests - `Chrome:3 instances, Firefox:3 instances`
 - [x] Reporting of the results - `Allure and Multiple cucumber Json reporter`
+- [x] Cross browser tests
+- [x] Design pattern - Page Object Model (POM)
 - [x] Documentation
 
 ### Addtional ( Bonus )
 
-- [ ] Kubernetes deploying - **Work in Progress**
-- [x] Making use of `wdio-image-comparison-service`
+- [x] Dockerized Image solution
+- [x] Image Regression -> Made use of `wdio-image-comparison-service`
 
 #### Features
 
-- Test will run, parallely based on node instances aavailable with `selenium-hub` `chrome/firefox` **nodes**
+- Test will run, parallely based on node instances available with `selenium-hub` `chrome/firefox` **nodes**
 - BDD testing with `Cucumber`
+- Reporting with `multiple-cucumber-json-reporter`step-wise Screenshots
 - Reporting with `Allure`
-- Reporting with `multiple-cucumber-json-reporter`
 - Given, Scenario, Step definitions and helper files written in `typescript`
 - Docker compose is used to start the `selenium-hub`
 
@@ -38,24 +40,24 @@ npm install
 2. Install **docker** and run `selenium:hub`:
 
 ```sh
-npm run selenium
+npm run docker-start
 ```
 
 3. Running tests:
 
 ```sh
-npm run test
+npm run docker-test
 ```
 
 To stop docker containers:
 
 ```sh
-npm run selenium:stop
+npm run docker-stop
 ```
 
 #### Gherking syntax Features Under test and grouping.
 
-- `image.feature`- Tests related to Image comparison.
+- `image.feature`- Tests related to Image Visual comparison - Screen, Fullscreen, Tabable.
 - `modal.feature` - Tests related to modal dialog ex: cookie policy
 - `navigation.feature` - Tests related to navigable elements in application ex: hamburger menu options `Buy`, `Own` etc.
 
@@ -76,18 +78,17 @@ npm run report
 #### Parallel Testing
 
 - WebdriverIO can run parallel test/features in case of multiple nodes availability with selenium hub.
-  so We have configured `chrome=3` and `firefox=1` instance/node.
-- When run `docker-compose up -d --scale chrome=3` or `npm run selenium`, we are spinning three chrome instances.
-- Webdriver IO will run all test in **parallel** in chrome due to available nodes
-- Webdriver IO will run sequentially in Firefox because of single instance/node.
-- We can use **kubernetes to provision the nodes** in selenium-hub based on demand ( Work in Progess)
+  so We have configured `chrome=3` and `firefox=3` instance/node.
+- When run `docker-compose up -d --scale chrome=3 --scale firefox=3` or `npm run selenium`, we are spinning three chrome instances.
+- Webdriver IO will run all test in **parallel** / **sequential** in chrome or Firefor as per specified nodes config.
+- Webdriver IO will run sequentially if 1 instance is specified. Example: `firefox=1` would run all features on firefox sequentially.
 
 #### Local dashboard urls
 
-- [selenium-hub](https://share.anysnap.app/f8zhG3avvtnn) : `http://localhost:4444`
+- [selenium-hub]() : `http://localhost:4444`
 
 #### Screenshots:
 
-- [Execution of UI test case results](https://share.anysnap.app/fZGB31iWuuDQ)
-- [Selenium Grid Dashboard](https://share.anysnap.app/fCfzXv5iYeBS)
-- [Simultaenous nodes of chrome running parallelly](https://share.anysnap.app/fXy17mRrZGLN)
+- [Execution of UI test case results]()
+- [Selenium Grid Dashboard]()
+- [Simultaneous nodes of chrome and firefox running parallelly]()
