@@ -94,7 +94,11 @@ npm run report
    
    `multiple-cucumber-html-report`
    ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report.png?raw=true)
-   
+
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report-1.png?raw=true)
+
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report-2.png?raw=true)
+
    ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/multiple-cucumber-html-report.png?raw=true)
    
 - [Selenium Grid Dashboard -> Simultaneous nodes of chrome and firefox running parallelly]
