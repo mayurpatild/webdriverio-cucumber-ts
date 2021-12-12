@@ -113,3 +113,8 @@ npm run report
   `http://localhost:4444`
   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub.png)
 
+#### Image Regression
+
+`multiple-cucumber-html-report`
+   ![alt text ](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/image-regression.png?raw=true)
+
