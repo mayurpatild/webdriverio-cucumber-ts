@@ -95,10 +95,17 @@ Then(
 );
 
 Then(
-  /^I play video and validate pause and play$/,
-  function (): void {
-    videoPage.clickIntroVideoToBePlayed();
-    videoPage.verifyVideoPlayPauseAndTimeFrame();
-    addScreenshot();
+  /^verify video is playing$/,
+  async function (): Promise<void> {
+    await videoPage.verifyVideoPlaying();
+    await addScreenshot();
+  }
+);
+
+Then(
+  /^verify video is paused$/,
+  async function (): Promise<void> {
+    await videoPage.verifyVideoPaused();
+    await addScreenshot();
   }
 );

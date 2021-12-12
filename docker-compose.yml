@@ -30,12 +30,22 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_GRID_URL=http://localhost:4444
     ports:
-      - "5900"
+      - "5556:5555"
+    healthcheck:
+      test: ["CMD", "/opt/bin/check-grid.sh", "--host", "0.0.0.0", "--port", "5555"]
+      interval: 15s
+      timeout: 15s
+      retries: 3
+      start_period: 30s 
 
   selenium-hub-master:
     image: selenium/hub:${SELENIUM_VERSION}
     container_name: selenium-hub-master
     ports:
-      - "4442:4442"
-      - "4443:4443"
       - "4444:4444"
+    healthcheck:
+      test: ["CMD", "/opt/bin/check-grid.sh", "--host", "0.0.0.0", "--port", "4444"]
+      interval: 15s
+      timeout: 15s
+      retries: 3
+      start_period: 30s

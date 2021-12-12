@@ -9,9 +9,9 @@ Given(/^I open the url "([^"]*)?"$/, function (urlToLoad: string): void {
   browser.pause(3000)
 });
 
-Given(/^I open the url "([^"]*)?" and accept cookies$/, function (urlToLoad: string): void {
-  browser.url(urlToLoad);
-  browser.maximizeWindow()
-  millionMorePage.handlingCookieAlert();
-  millionMorePage.acceptCookie();
+Given(/^I open the url "([^"]*)?" and accept cookies$/, async function (urlToLoad: string): Promise<void> {
+  await browser.url(urlToLoad);
+  await browser.maximizeWindow()
+  await millionMorePage.handlingCookieAlert();
+  await millionMorePage.acceptCookie();
 });

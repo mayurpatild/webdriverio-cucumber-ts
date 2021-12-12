@@ -24,9 +24,9 @@ export default class BasePage {
   }
 
   //get rid of cookies
-  handlingCookieAlert() {
-    browser.execute(`document.cookie = "OptanonAlertBoxClosed=${new Date().toISOString()};";`)
-    browser.refresh()
+  async handlingCookieAlert() {
+    await browser.execute(`document.cookie = "OptanonAlertBoxClosed=${new Date().toISOString()};";`)
+    await browser.refresh()
   }
 
   async acceptCookie() {
@@ -34,7 +34,7 @@ export default class BasePage {
       browser.setTimeout({ 'implicit': 0 })
       const elements = await $$("//button[normalize-space()='Accept']")
       if (elements.length > 0 && elements[0].isClickable) {
-        elements[0].click
+        await elements[0].click
       }
     } catch (ex) {
       // logger.error(error)

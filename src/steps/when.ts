@@ -3,6 +3,8 @@ import { millionMorePage } from "../pages/millionMorePage";
 import { TIMEOUT_MS } from "../constants/globalConstants";
 import { imageService } from "../support/imageService";
 import { checkIfElementExists } from "../support/checkIfElementExists";
+import { videoPage } from "../pages/videoPage";
+import { addScreenshot } from "../support/reporter";
 
 When(
   /^I (click) on the (link|button|element) "([^"]*)?"$/,
@@ -34,5 +36,22 @@ When(
     fileName: string
   ): void {
     imageService.saveImage(screenShotType, fileName);
+  }
+);
+
+
+When(
+  /^I play video$/,
+  async function (): Promise<void> {
+    await videoPage.clickIntroVideoToBePlayed();
+    await addScreenshot();
+  }
+);
+
+When(
+  /^I pause video$/,
+  async function (): Promise<void> {
+    await videoPage.pauseVideo();
+    await addScreenshot();
   }
 );
