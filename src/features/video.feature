@@ -8,7 +8,7 @@ Feature: Video playback
         Given I open the url "https://www.volvocars.com/intl/v/car-safety/a-million-more" and accept cookies
 
     Scenario: Playing a video on page
-        When I play viveo
+        When I play video
         Then verify video is playing
-        When I pause Video
+        When I pause video
         Then verify video is paused    

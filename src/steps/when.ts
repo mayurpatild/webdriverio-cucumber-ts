@@ -44,7 +44,6 @@ When(
   /^I play video$/,
   async function (): Promise<void> {
     await videoPage.clickIntroVideoToBePlayed();
-    await addScreenshot();
   }
 );
 
@@ -52,6 +51,5 @@ When(
   /^I pause video$/,
   async function (): Promise<void> {
     await videoPage.pauseVideo();
-    await addScreenshot();
   }
 );
