@@ -1,4 +1,5 @@
 FROM node:12
+FROM java:8
 LABEL maintainer="mayurpatild"
 
 WORKDIR /usr/app
