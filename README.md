@@ -1,5 +1,7 @@
 # Volvo Test assignment ( Docker + Selenium Grid + Cucumber + Typescript + WebdriverIO )
 
+[![CI](https://github.com/mayurpatild/webdriverio-cucumber-ts/workflows/CI/badge.svg)](https://github.com/mayurpatild/webdriverio-cucumber-ts/actions) 
+
 #### Requirements
 
 - [x] Setup the solution with its Dockerized image - `Docker compose with selenium-hub, selenium-node/chrome, selenium-node/firefox`
