@@ -1,10 +1,9 @@
 import { When } from "cucumber";
-import { millionMorePage } from "../pages/millionMorePage";
+import { menuPage } from "../pages/menuPage";
 import { TIMEOUT_MS } from "../constants/globalConstants";
 import { imageService } from "../support/imageService";
 import { checkIfElementExists } from "../support/checkIfElementExists";
 import { videoPage } from "../pages/videoPage";
-import { addScreenshot } from "../support/reporter";
 
 When(
   /^I (click) on the (link|button|element) "([^"]*)?"$/,
@@ -21,9 +20,9 @@ When(
 When(
   /^I clicked "([^"]*)?" from model menu$/,
   async function (selector: string): Promise<void> {
-    await (await millionMorePage.optionsOpen).click();
-    (await millionMorePage.sideNavigationContainer).waitForDisplayed(TIMEOUT_MS);
-    const element = await millionMorePage.getElementBySelector(selector);
+    await (await menuPage.optionsOpen).click();
+    (await menuPage.sideNavigationContainer).waitForDisplayed(TIMEOUT_MS);
+    const element = await menuPage.getElementBySelector(selector);
     (await element).click();
   }
 );

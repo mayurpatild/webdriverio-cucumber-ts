@@ -1,21 +1,22 @@
 import { Then } from "cucumber";
 import { expect } from "chai";
 
-import { millionMorePage } from "../pages/millionMorePage";
+import { menuPage } from "../pages/menuPage";
 import { TIMEOUT_MS } from "../constants/globalConstants";
 import { imageService } from "../support/imageService";
 import { logger } from "../support/logger";
 import { videoPage } from "../pages/videoPage";
-import { addScreenshot } from "../support/reporter";
+import { millionMorePage } from "../pages/millionMorePage";
+
 
 Then(
   /^I expect "([^"]*)?" model items is displayed$/,
   async function (selector: string) {
     logger.info(
       `data: ${selector}: element = `,
-      await (await millionMorePage.getElementBySelector(selector)).getValue()
+      await (await menuPage.getElementBySelector(selector)).getValue()
     );
-    (await millionMorePage
+    (await menuPage
       .getElementBySelector(selector))
       .waitForDisplayed(TIMEOUT_MS);
   }
@@ -24,15 +25,15 @@ Then(
 Then(
   /^I expect "([^"]*)?" to be redirected to page with title "([^"]*)?"$/,
   async function (selector: string, pageTitle: string) {
-    (await millionMorePage
+    (await menuPage
       .getElementBySelector(selector))
       .waitForDisplayed(TIMEOUT_MS);
 
     expect(
-      await (await millionMorePage.getElementBySelector(selector)).isClickable()
+      await (await menuPage.getElementBySelector(selector)).isClickable()
     ).to.equal(true);
 
-    await (await millionMorePage.getElementBySelector(selector)).click();
+    await (await menuPage.getElementBySelector(selector)).click();
 
     const title = await browser.getTitle();
     expect(title).to.contain(
@@ -45,11 +46,11 @@ Then(
 Then(
   /^I expect "([^"]*)?" to be redirected to page with link "([^"]*)?"$/,
   async function (selector: string, redirectUrl: string) {
-    (await millionMorePage
+    (await menuPage
       .getElementBySelector(selector))
       .waitForDisplayed(TIMEOUT_MS);
 
-    const parentElement = await (await millionMorePage
+    const parentElement = await (await menuPage
       .getElementBySelector(selector))
       .$("..");
 
@@ -105,5 +106,18 @@ Then(
   /^verify video is paused$/,
   async function (): Promise<void> {
     await videoPage.verifyVideoPaused();
+  }
+);
+
+Then(
+  /^below options should( not)* be available in the "([^"]*)?" :$/,
+  async function (falseCase: string, section: string, dataTable) {
+    console.log("Verifying Page:" + section);
+    let data = dataTable.raw();
+    console.log(data);
+    for (const item of data) {
+      await millionMorePage.verifyItemInSectionIsDisplayed(falseCase, section, item)
+    }
+    return;
   }
 );

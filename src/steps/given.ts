@@ -1,5 +1,5 @@
 import { Given } from "cucumber";
-import { millionMorePage } from "../pages/millionMorePage";
+import { menuPage } from "../pages/menuPage";
 /**
  * Reusing code based on regex parameters in other feature files.
  */
@@ -13,6 +13,6 @@ Given(/^I open the url "([^"]*)?" and accept cookies$/, async function (urlToLoa
   await browser.url(urlToLoad);
   await browser.maximizeWindow()
   await browser.setWindowSize(parseInt(process.env.SCREEN_WIDTH), parseInt(process.env.HEIGHT))
-  await millionMorePage.handlingCookieAlert();
-  await millionMorePage.acceptCookie();
+  await menuPage.handlingCookieAlert();
+  await menuPage.acceptCookie();
 });

@@ -16,6 +16,10 @@ Before({ tags: "@OnlyFirefox" }, () => {
   return undefined;
 });
 
+Before({ tags: "@Pending" }, () => {
+  return "skipped";
+});
+
 Before((Scenario) => {
   // We are setting browser size, while executing test runners.
   browser.setWindowSize(
