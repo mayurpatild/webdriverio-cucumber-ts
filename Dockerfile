@@ -1,5 +1,5 @@
 FROM node:12
-LABEL maintainer="mayurpatild"
+LABEL maintainer="Mayur Patil <mayurpatild@gmail.com>"
 
 WORKDIR /usr/app
 
