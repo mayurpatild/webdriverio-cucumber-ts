@@ -97,7 +97,7 @@ class MillionMorePages extends BasePage {
    * @description Gets selector/locator from locatorMap based on Section and item name and verifies if displayed or not
    */
   async verifyItemInSectionIsDisplayed(falseCase, Section: string, Item: string) {
-    let locator = await this.locatorMap[Section][Item];
+    let locator: string = String(await this.locatorMap[String(Section).trim()][String(Item).trim()]);
     let selector = await $(locator)
     const displayed = await (selector).isDisplayed();
     await (await selector.scrollIntoView())

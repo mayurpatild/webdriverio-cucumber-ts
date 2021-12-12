@@ -6,6 +6,7 @@ Feature: A Million More
   Background: User is opening Volvo - A million More Campaign page
     Given I open the url "https://www.volvocars.com/intl/v/car-safety/a-million-more" and accept cookies
 
+  @SafetyFeatures
   Scenario: User is verifying the list of safety features
     Then below options should be available in the "Safety Section" :
       | Safety header             |
@@ -18,6 +19,7 @@ Feature: A Million More
       | Learn more URL            |
       | Conditions message        |
 
+  @Testimonials
   Scenario: User is verifying the list of testimonials
     Then below options should be available in the "Testimonial Section" :
       | Testimonial header      |
@@ -26,7 +28,7 @@ Feature: A Million More
       | Amy                     |
       | Amy Description         |
 
-
+  @Innovation
   Scenario: User is verifying the Innovation
     Then below options should be available in the "Innovation Section" :
       | Innovation header      |
@@ -34,6 +36,7 @@ Feature: A Million More
       | Learn more URL         |
       | Innovation image       |
 
+  @Models
   Scenario: User is verifying the list of Models
     Then below options should be available in the "Models Section" :
       | Models Header   |
@@ -45,8 +48,9 @@ Feature: A Million More
       | Learn More       |
       | Mild Hybrid Cars |
 
+  @TopPanel
   Scenario: User is verifying the Top Panel
     Then below options should be available in the "Top Panel Section" :
       | Volvo logo   |
       | Our Cars URL |
-      | Options      |
+      | Menu         |
