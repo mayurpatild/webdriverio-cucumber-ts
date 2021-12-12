@@ -13,6 +13,8 @@ services:
 
   chrome:
     image: selenium/node-chrome:${SELENIUM_VERSION}
+    volumes:
+      - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
     environment:
@@ -26,6 +28,8 @@ services:
 
   firefox:
     image: selenium/node-firefox:${SELENIUM_VERSION}
+    volumes:
+      - /dev/shm:/dev/shm
     depends_on:
       - selenium-hub
     environment:
@@ -49,6 +53,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     volumes:
+      - /dev/shm:/dev/shm
       - ./report:/usr/app/report
     environment:
       - SE_EVENT_BUS_HOST=selenium-hub
