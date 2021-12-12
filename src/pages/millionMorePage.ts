@@ -64,14 +64,14 @@ class MillionMorePages extends BasePage {
 
       "Top Panel Section": {
         "Heading": "//a[@data-track-onclick='{\"eventAction\":\"click\",\"eventLabel\":\"volvo logo\"}']",
-        "Volvo logo": "(//img[contains(@src, \"https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg\")])[1]",
+        "Volvo logo": "(//img[contains(@src, \"https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg\")])[2]",
         "Our Cars URL": "//span[contains(.,'Our Cars')]",
         "Options": "//div[contains(., 'SiteNav-a')]",
       },
 
       "Top Panel options Section": {
         "Heading": "(//img[contains(@src, \"https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg\")])[2]",
-        "Volvo logo": "(//img[contains(@src, \"https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg\")])[2]",
+        "Volvo logo": "(//img[contains(@src, \"https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg\")])[1]",
         "Buy": "//em[contains(.,'Buy')]",
         "Own": "//em[contains(.,'Own')]",
         "Why Volvo": "//em[contains(.,'Why Volvo')]",
