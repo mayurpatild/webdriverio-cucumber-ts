@@ -88,13 +88,21 @@ npm run report
 #### Screenshots:
 
 - [Execution of UI test case results]
+
+   `Allure Report` 
    ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/allure-report.png?raw=true) 
+   
+   `multiple-cucumber-html-report`
    ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report.png?raw=true)
+   
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/multiple-cucumber-html-report.png?raw=true)
+   
 - [Selenium Grid Dashboard -> Simultaneous nodes of chrome and firefox running parallelly]
    ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub-sessions.png?raw=true)
    
 #### Local dashboard urls
 
 - [selenium-hub parallel cross-browser]
-  ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub.png) : `http://localhost:4444`
+  `http://localhost:4444`
+  ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub.png)
 
