@@ -65,8 +65,8 @@ class MillionMorePages extends BasePage {
       "Top Panel Section": {
         "Heading": "//a[@data-track-onclick='{\"eventAction\":\"click\",\"eventLabel\":\"volvo logo\"}']",
         "Volvo logo": "(//img[contains(@src, \"https://www.volvocars.com/static/shared/images/volvo-wordmark-black.svg\")])[2]",
-        "Our Cars URL": "//span[contains(.,'Our Cars')]",
-        "Options": "//div[contains(., 'SiteNav-a')]",
+        "Our Cars URL": "//em[contains(.,'Our Cars')]",
+        "Menu": "//em[contains(., 'Menu')]",
       },
 
       "Top Panel options Section": {
