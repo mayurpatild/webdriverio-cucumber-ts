@@ -1,6 +1,5 @@
-FROM node:12
+FROM selenium/node-base:3.5.3-boron
 LABEL maintainer="mayurpatild"
-RUN apt-get update && apt-get install -y openjdk-8-jdk
 WORKDIR /usr/app
 
 ADD ./scripts/wait-for-it.sh ./
