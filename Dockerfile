@@ -1,7 +1,9 @@
-FROM selenium/node-base:3.5.3-boron
+FROM node:12
 LABEL maintainer="mayurpatild"
+
 WORKDIR /usr/app
 
+RUN apt-get update && apt-get install -y openjdk-8-jdk
 ADD ./scripts/wait-for-it.sh ./
 RUN chmod 755 wait-for-it.sh
 ADD ./scripts/run.sh ./
