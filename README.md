@@ -60,6 +60,7 @@ npm run docker-stop
 - `image.feature`- Tests related to Image Visual comparison - Screen, Fullscreen, Tabable.
 - `modal.feature` - Tests related to modal dialog ex: cookie policy
 - `navigation.feature` - Tests related to navigable elements in application ex: hamburger menu options `Buy`, `Own` etc.
+- `video.feature` - Tests related to video content in application ex: verify Play or Pause Video.
 
 #### Report generation
 
@@ -83,13 +84,17 @@ npm run report
 - Webdriver IO will run all test in **parallel** / **sequential** in chrome or Firefor as per specified nodes config.
 - Webdriver IO will run sequentially if 1 instance is specified. Example: `firefox=1` would run all features on firefox sequentially.
 
-#### Local dashboard urls
-
-- [selenium-hub](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub.png) : `http://localhost:4444`
 
 #### Screenshots:
 
 - [Execution of UI test case results]
+   ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/allure-report.png?raw=true) 
    ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/report.png?raw=true)
 - [Selenium Grid Dashboard -> Simultaneous nodes of chrome and firefox running parallelly]
    ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub-sessions.png?raw=true)
+   
+#### Local dashboard urls
+
+- [selenium-hub parallel cross-browser]
+  ![alt text](https://github.com/mayurpatild/wdio-cucumber-ts/blob/master/sample-reports/selenium-hub.png) : `http://localhost:4444`
+
