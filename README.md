@@ -57,8 +57,9 @@ npm run docker-stop
 
 #### Gherking syntax Features Under test and grouping.
 
+- `a_million_more.feature`- Tests to verify All sections and sub-sections/items on the Campaign page
 - `image.feature`- Tests related to Image Visual comparison - Screen, Fullscreen, Tabable.
-- `modal.feature` - Tests related to modal dialog ex: cookie policy
+- `cookies_modal.feature` - Tests related to modal dialog ex: cookie policy
 - `navigation.feature` - Tests related to navigable elements in application ex: hamburger menu options `Buy`, `Own` etc.
 - `video.feature` - Tests related to video content in application ex: verify Play or Pause Video.
 
