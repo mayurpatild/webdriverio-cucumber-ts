@@ -1,7 +1,6 @@
 FROM node:12
-FROM java:8
 LABEL maintainer="mayurpatild"
-
+RUN apt-get update && apt-get install -y openjdk-8-jdk
 WORKDIR /usr/app
 
 ADD ./scripts/wait-for-it.sh ./
