@@ -16,7 +16,7 @@ jobs:
       run: docker-compose -f docker-compose.ci.yml build
 
     - name: Run tests
-      run: docker-compose -f docker-compose.ci.yml up --abort-on-container-exit --exit-code-from node
+      run: docker-compose -f docker-compose.ci.yml up --abort-on-container-exit
 
     - uses: actions/upload-artifact@v1 
       with:
