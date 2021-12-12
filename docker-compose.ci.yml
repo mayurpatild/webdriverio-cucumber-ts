@@ -51,8 +51,8 @@ services:
     volumes:
       - ./report:/usr/app/report
     environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PORT=4444
       - CIRCLECI=${CIRCLECI}
       - CIRCLE_BRANCH=${CIRCLE_BRANCH}
       - CIRCLE_SHA1=${CIRCLE_SHA1}
