@@ -1,4 +1,4 @@
-@Video
+@Video @OnlyChrome
 Feature: Video playback
 
     As users, we are going to load the campaign url, 

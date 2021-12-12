@@ -83,7 +83,7 @@ export const config = {
             // to allow viewing actions in the browser.
           ] : [
 
-            '-headless',
+            '-headless', '--width=1920', '--height=1080'
           ]),
       },
       acceptInsecureCerts: true,

@@ -12,6 +12,7 @@ Given(/^I open the url "([^"]*)?"$/, function (urlToLoad: string): void {
 Given(/^I open the url "([^"]*)?" and accept cookies$/, async function (urlToLoad: string): Promise<void> {
   await browser.url(urlToLoad);
   await browser.maximizeWindow()
+  await browser.setWindowSize(parseInt(process.env.SCREEN_WIDTH), parseInt(process.env.HEIGHT))
   await millionMorePage.handlingCookieAlert();
   await millionMorePage.acceptCookie();
 });

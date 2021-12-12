@@ -34,7 +34,7 @@ export const reportingConfig = {
     snippetSyntax: undefined,
     strict: true,
     tagsInTitle: false,
-    tagExpression: "", // tagExpression: "@Image" , Keep Empty for running all scenarios
+    tagExpression: "not @Pending", // tagExpression: "@Image" , Keep Empty for running all scenarios
     timeout: 120000,
   },
 };
