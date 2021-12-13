@@ -39,7 +39,7 @@
 npm install
 ```
 
-2. Install **docker** and run `selenium:hub`:
+2. Install **docker** and run `docker-start`:
 
 ```sh
 npm run docker-start
