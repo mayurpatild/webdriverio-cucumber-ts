@@ -57,7 +57,7 @@ To stop docker containers:
 npm run docker-stop
 ```
 
-#### Gherking syntax Features Under test and grouping.
+#### Gherkin syntax - Features Under test and grouping.
 
 - `a_million_more.feature`- Tests to verify All sections and sub-sections/items on the Campaign page
 - `image.feature`- Tests related to Image Visual comparison - Screen, Fullscreen, Tabable.
